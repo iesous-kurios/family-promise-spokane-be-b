@@ -24,7 +24,7 @@ var router = express.Router();
  *                  example: true
  */
 router.get('/', function (req, res) {
-  res.status(200).json({ api: 'up and running', timestamp: Date.now() });
+  res.status(200).json({ api: 'up, up, and away', timestamp: Date.now() });
 });
 
 module.exports = router;
