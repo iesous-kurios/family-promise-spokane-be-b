@@ -15,9 +15,10 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/by', function (req, res) {
-  const values = req.body;
-  Logs.findBy(values)
+// {}
+router.get('/family/:id', function (req, res) {
+  const { id } = req.params;
+  Logs.findByFamilyId(id)
     .then((logs) => {
       res.status(200).json(logs);
     })

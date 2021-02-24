@@ -38,7 +38,7 @@ router.get('/:id', authRequired, function (req, res) {
         };
         res.status(200).json(final);
       } catch (err) {
-        res.status(404).json({ error: err });
+        res.status(404).json({ error: err.message });
       }
     })
     .catch((err) => {
