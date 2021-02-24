@@ -28,6 +28,7 @@ const authRequired = async (req, res, next) => {
     if (!match) throw new Error('Missing idToken');
 
     const idToken = match[1];
+
     oktaJwtVerifier
       .verifyAccessToken(idToken, oktaVerifierConfig.expectedAudience)
       .then(async (data) => {
@@ -40,8 +41,8 @@ const authRequired = async (req, res, next) => {
         }
         next();
       })
-      .catch(() => {
-        res.status(401).json({ message: 'Invalid token' });
+      .catch((err) => {
+        res.status(401).json({ message: `${err.message} error` });
       });
   } catch (err) {
     next(createError(401, err.message));

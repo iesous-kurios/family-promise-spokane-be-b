@@ -12,8 +12,8 @@ const findBy = (filter) => {
 const findById = async (reservation_id) => {
   return db('logs').where({ reservation_id }).select('*');
 };
-const findByFamilyId = async (family_id) => {
-  return db('logs').where({ family_id }).select('*');
+const findByFamilyId = (family_id) => {
+  return db('logs').where({ family_id: family_id });
 };
 
 const create = async (log) => {
