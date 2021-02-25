@@ -7,7 +7,7 @@ const cron = require('node-cron')
 const max_beds = 90
 
 // syntax for cron is every 15min from 7-8 am '*/4 7-8 * * *'
-const task = cron.schedule('*/4 0-1 * * *', function() {
+const task = cron.schedule('0 0 * * *', function() {
     console.log('getting the count of beds');
     Beds.findAll()
     .then((res) => {
