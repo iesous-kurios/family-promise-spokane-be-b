@@ -9,6 +9,8 @@ const swaggerJSDoc = require('swagger-jsdoc');
 const jsdocConfig = require('../config/jsdoc');
 const dotenv = require('dotenv');
 const config_result = dotenv.config();
+const task = require('../tasks/databaseTasks');
+
 if (process.env.NODE_ENV != 'production' && config_result.error) {
   throw config_result.error;
 }
@@ -39,6 +41,10 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerSpec, swaggerUIOptions)
 );
+
+// uses cron to set a task
+// this should help with reseting bed values in the database
+task.start();
 
 app.use(helmet());
 app.use(express.json());
