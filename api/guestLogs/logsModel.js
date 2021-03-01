@@ -8,6 +8,12 @@ const findBy = (filter) => {
   return db('logs').where(filter);
 };
 
+const findMemLogs = () => {
+  return db('logs as l')
+      .leftJoin('members as m', 'l.family_id', 'm.family_id')
+      .returning('*')
+}
+
 //a function to find log by its id
 const findById = async (reservation_id) => {
   return db('logs').where({ reservation_id }).select('*');
@@ -52,4 +58,5 @@ module.exports = {
   update,
   remove,
   findOrCreateLog,
+  findMemLogs,
 };
