@@ -9,9 +9,12 @@ const findBy = (filter) => {
 };
 
 const findMemLogs = () => {
+  const curDate = new Date().toDateString()
   return db('logs as l')
-      .leftJoin('members as m', 'l.family_id', 'm.family_id')
-      .returning('*')
+      .where('date', curDate)
+      .join('members as m', 'm.family_id','l.family_id')
+      .select('*')
+
 }
 
 //a function to find log by its id
