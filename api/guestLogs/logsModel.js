@@ -11,7 +11,8 @@ const findBy = (filter) => {
 const findMemLogs = () => {
   const curDate = new Date().toDateString()
   return db('logs as l')
-      .where('date', curDate)
+      .where({date: curDate,
+      reservation_status: 'true'})
       .join('members as m', 'm.family_id','l.family_id')
       .select('*')
 
