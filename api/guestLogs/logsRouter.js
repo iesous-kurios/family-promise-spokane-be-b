@@ -15,6 +15,17 @@ router.get('/', function (req, res) {
     });
 });
 
+router.get('/memberLogs', function (req, res) {
+  Logs.findMemLogs()
+    .then((logs) => {
+      res.status(200).json(logs);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ message: err.message });
+    });
+});
+
 // {}
 router.get('/family/:id', function (req, res) {
   const { id } = req.params;
