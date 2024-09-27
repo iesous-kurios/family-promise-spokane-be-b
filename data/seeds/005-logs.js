@@ -6,7 +6,7 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('logs').insert([
         {
-          supervisor_id: '00u2lh0bsAliwLEe75d6',
+          supervisor_id: '00u9yoetkifWx06KM5d6',
           family_id: 1,
           reservation_status: true,
           waitlist: false,
@@ -19,7 +19,7 @@ exports.seed = function (knex) {
           members_staying: [],
         },
         {
-          supervisor_id: '00u2lh0bsAliwLEe75d6',
+          supervisor_id: '00u9yoetkifWx06KM5d6',
           family_id: 1,
           reservation_status: true,
           waitlist: false,
@@ -32,7 +32,7 @@ exports.seed = function (knex) {
           members_staying: [],
         },
         {
-          supervisor_id: '00u2lh0bsAliwLEe75d6',
+          supervisor_id: '00u9yoetkifWx06KM5d6',
           family_id: 1,
           reservation_status: true,
           waitlist: false,
@@ -45,7 +45,7 @@ exports.seed = function (knex) {
           members_staying: [],
         },
         {
-          supervisor_id: '00u2lh0bsAliwLEe75d6',
+          supervisor_id: '00u9yoetkifWx06KM5d6',
           family_id: 1,
           reservation_status: true,
           waitlist: false,
